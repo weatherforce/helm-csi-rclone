@@ -1,0 +1,44 @@
+# storageclass overrides.
+storageClass:
+
+  # storageClass name that will be deployed to cluster.
+  name: "rclone"
+
+# rclone image
+image: 
+  name: valentinb10/csi-rclone
+  # rclone version. https://hub.docker.com/r/valentinb10/csi-rclone/tags
+  tag: v1.57.0
+
+# use default parameters. You might want set this to false when using as subchart.
+defaultParams: true
+
+# Pod priority
+priorityClassName: ""
+
+# Rclone mount parameters. Anything except for remote and remotePath will be prefixed with dashes and passed into mounter. 
+params:
+
+  remote: "s3"
+  remotePath: "bucketname"
+  #remotePathSuffix: "/subpath"
+
+nodePlugin:
+  registrar:
+    resources: {}
+  rclone:
+    resources: {}
+  # Some Kubernetes distributions use different kubelet base path (e.g. /var/snap/microk8s/common/var/lib/kubelet in Microk8s).
+  kubeletBasePath: "/var/lib/kubelet"
+
+  # Extra volume configuration
+  extraVolumes: []
+  extraVolumeMounts: []
+
+controller:
+  attacher:
+    resources: {}
+  registrar:
+    resources: {}
+  rclone:
+    resources: {}
