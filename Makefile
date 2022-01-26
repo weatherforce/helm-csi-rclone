@@ -1,5 +1,5 @@
 VERSION=$(shell cat VERSION)
-REGISTRY_NAME=valentinb10
+REGISTRY_NAME=weatherforce
 IMAGE_NAME=csi-rclone
 IMAGE_TAG=$(REGISTRY_NAME)/$(IMAGE_NAME):$(VERSION)
 
