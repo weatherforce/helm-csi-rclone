@@ -3,29 +3,29 @@ entries:
   csi-rclone:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-01-26T14:49:00.866563608+01:00"
+    created: "2022-01-26T14:52:38.844712109+01:00"
     description: CSI plugin for rclone mount
-    digest: 69ed57fea493772f60f802da98e7059c69360c3d1a17487a8f817d26580a2da0
+    digest: 256cd04460feb206edba026ab9a0425e0f4418de5ab303aba8fead01bdf23b31
     name: csi-rclone
     urls:
-    - http://tech.weatherforce.org/helm-csi-rclone/csi-rclone-2022.01.26.tgz
+    - http://tech.weatherforce.org/helm-csi-rclone/charts/csi-rclone-2022.01.26.tgz
     version: 2022.01.26
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-01-26T14:49:00.866171041+01:00"
+    created: "2022-01-26T14:52:38.844307318+01:00"
     description: CSI plugin for rclone mount
     digest: b13decc3f996956b0612cb6170a297ecd9ee516b9be7d0a2495ec9a6f6c501e9
     name: csi-rclone
     urls:
-    - http://tech.weatherforce.org/helm-csi-rclone/csi-rclone-2022.01.07.tgz
+    - http://tech.weatherforce.org/helm-csi-rclone/charts/csi-rclone-2022.01.07.tgz
     version: 2022.01.07
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-01-26T14:49:00.865772978+01:00"
+    created: "2022-01-26T14:52:38.843893028+01:00"
     description: CSI plugin for rclone mount
     digest: 8376d3dac959e4e5a097960f62f02d038806cccb91ae76667184938383c5345b
     name: csi-rclone
     urls:
-    - http://tech.weatherforce.org/helm-csi-rclone/csi-rclone-2021.06.09.tgz
+    - http://tech.weatherforce.org/helm-csi-rclone/charts/csi-rclone-2021.06.09.tgz
     version: 2021.06.09
-generated: "2022-01-26T14:49:00.865234746+01:00"
+generated: "2022-01-26T14:52:38.843334608+01:00"

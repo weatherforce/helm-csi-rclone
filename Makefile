@@ -16,4 +16,4 @@ image:
 helm:
 	cd charts
 	helm package csi-rclone
-	helm repo index --url http://tech.weatherforce.org/helm-csi-rclone .
+	helm repo index --url http://tech.weatherforce.org/helm-csi-rclone/charts .
