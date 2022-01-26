@@ -7,7 +7,7 @@ IMAGE_TAG=$(REGISTRY_NAME)/$(IMAGE_NAME):$(VERSION)
 
 .PHONY: all image helm
 
-all: image
+all: image helm
 
 image:
 	docker build -t $(IMAGE_TAG) .
