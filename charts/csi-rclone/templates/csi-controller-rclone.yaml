@@ -8,7 +8,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   serviceName: "csi-controller-rclone"
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: csi-controller-rclone
@@ -23,10 +23,11 @@ spec:
       {{- end }}
       containers:
         - name: csi-attacher
-          image: quay.io/k8scsi/csi-attacher:v1.1.1
+          image: k8s.gcr.io/sig-storage/csi-attacher:v3.4.0
           args:
             - "--v=5"
             - "--csi-address=$(ADDRESS)"
+            - "--leader-election"
           env:
             - name: ADDRESS
               value: /csi/csi.sock
@@ -36,20 +37,6 @@ spec:
               mountPath: /csi
           resources:
             {{- .Values.controller.attacher.resources | toYaml | nindent 12 }}
-        - name: csi-cluster-driver-registrar
-          image: quay.io/k8scsi/csi-cluster-driver-registrar:v1.0.1
-          args:
-            - "--v=5"
-            - "--pod-info-mount-version=\"v1\""
-            - "--csi-address=$(ADDRESS)"
-          env:
-            - name: ADDRESS
-              value: /csi/csi.sock
-          volumeMounts:
-            - name: socket-dir
-              mountPath: /csi
-          resources:
-            {{- .Values.controller.registrar.resources | toYaml | nindent 12 }}
         - name: rclone
           image: {{ printf "%s:%s" .Values.image.name .Values.image.tag  | quote }}
           imagePullPolicy: Always
