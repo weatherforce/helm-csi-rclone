@@ -7,7 +7,7 @@ storageClass:
 # rclone image
 image: 
   name: weatherforce/csi-rclone
-  tag: 2022.01.26
+  tag: 2022.01.23
 
 # use default parameters. You might want set this to false when using as subchart.
 defaultParams: true
