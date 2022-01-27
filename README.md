@@ -1,7 +1,5 @@
 # helm-csi-rclone
 
-Helm chart to deploy [csi-rclone](https://github.com/diseq/csi-rclone)
-
 This helm chart helps setting up resources for https://github.com/diseq/csi-rclone storage plugin
 
 **This helm chart is compatible with Kubernetes >= 1.19.x (due to storage.k8s.io/v1 CSIDriver)**
@@ -17,7 +15,9 @@ Major changes from [wunderio helm chart](https://github.com/wunderio/charts/tree
 ## Usage
 
 1. Either:
-    a. configure rclone defaults by creating a [secret](https://github.com/wunderio/csi-rclone/blob/master/example/kubernetes/rclone-secret-example.yaml) in current namespace; 
+    
+    a. configure rclone defaults by creating a [secret](https://github.com/wunderio/csi-rclone/blob/master/example/kubernetes/rclone-secret-example.yaml) in current namespace
+
     b. Or setting credentials via `values.yaml` override.
 
 2. Install `csi-rclone` chart.
@@ -144,7 +144,7 @@ Major changes from [wunderio helm chart](https://github.com/wunderio/charts/tree
 
 ## Development
 
-To build a new image: 
+To build a new image (with the latest rclone version): 
 
 * Update the version in the `VERSION` file
 * run `make image`
